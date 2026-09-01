@@ -110,22 +110,13 @@ p {
 
 /* תמונה */
 
-.image-placeholder {
+.hero-image-photo {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
+  object-fit: cover;
   background-color: var(--color-placeholder);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-radius: 4px;
-}
-
-.image-placeholder span {
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  text-align: center;
-  padding: 0 var(--space-md);
 }
 
 /* פרטים מעשיים */
