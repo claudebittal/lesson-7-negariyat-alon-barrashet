@@ -1,21 +1,19 @@
 /*
-  פלטת צבעים ניטרלית ומקצועית.
-  נבחרה בכוונה כללית ולא ספציפית לתחום מסוים, כי הזמנת העבודה
-  לא כללה מידע על תחום העיסוק של הלקוח. ירוק-אפור עמוק כצבע מבטא
-  שלווה ואמינות בלי להטות לכיוון תחום מסוים (בריאות, פיננסים,
-  יופי וכו'), ורקע שמנת חמה שקולה ורכה יותר מלבן קר.
-  יש להתאים את הפלטה מחדש ברגע שידוע תחום העיסוק.
+  פלטת צבעים בהשראת חומרי הגלם של הלקוח, עץ אלון, אגוז ואורן.
+  גוון חום חם כצבע דגש, רקע בגוון קרם חמים כמו עץ מהוקצע, וטקסט
+  בחום כהה במקום שחור קר. הכוונה היא להרגיש בית מלאכה אמיתי,
+  עבודת יד חמה ומהימנה, בלי אלמנטים נוצצים או תעשייתיים.
 */
 
 :root {
-  --color-bg: #faf9f6;
-  --color-surface: #ffffff;
-  --color-text: #2b2b2b;
-  --color-muted: #6b6b6b;
-  --color-accent: #3a6b63;
-  --color-accent-dark: #2c514b;
-  --color-border: #e0ded8;
-  --color-placeholder: #c9c9c9;
+  --color-bg: #f5f0e8;
+  --color-surface: #fffdfa;
+  --color-text: #3b2a20;
+  --color-muted: #6e5b4e;
+  --color-accent: #8b5e3c;
+  --color-accent-dark: #6b4429;
+  --color-border: #e3d9cb;
+  --color-placeholder: #c9beb2;
 
   --font-heading: Georgia, "Times New Roman", serif;
   --font-body: Arial, "Segoe UI", sans-serif;
@@ -126,6 +124,8 @@ p {
   color: #ffffff;
   font-family: var(--font-body);
   font-size: 1rem;
+  text-align: center;
+  padding: 0 var(--space-md);
 }
 
 /* פרטים מעשיים */
@@ -155,6 +155,21 @@ p {
 .details-item p {
   color: var(--color-muted);
   margin: 0;
+}
+
+.details-item ul,
+.details-item ol {
+  color: var(--color-muted);
+  margin: 0;
+  padding-inline-start: 1.2rem;
+}
+
+.details-item li {
+  margin-bottom: var(--space-xs);
+}
+
+.details-item li:last-child {
+  margin-bottom: 0;
 }
 
 /* טופס */
