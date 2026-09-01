@@ -90,7 +90,7 @@
   <section class="section contact-form">
     <div class="container">
       <h2>השאירו פרטים</h2>
-      <form>
+      <form id="contact-form">
         <div class="form-group">
           <label for="name">שם מלא</label>
           <input type="text" id="name" name="name">
@@ -108,11 +108,68 @@
           <textarea id="message" name="message" rows="4"></textarea>
         </div>
         <button type="submit">שליחה</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
   </section>
 
 </main>
+
+<script>
+(function () {
+  var webhookUrl = 'https://claudeb.app.n8n.cloud/webhook/alon-barrashet-contact';
+  var form = document.getElementById('contact-form');
+  var status = document.getElementById('form-status');
+  var submitButton = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    status.hidden = true;
+    status.className = 'form-status';
+    status.textContent = '';
+    submitButton.disabled = true;
+
+    var payload = {
+      name: document.getElementById('name').value,
+      phone: document.getElementById('phone').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+
+    fetch(webhookUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    })
+      .then(function (response) {
+        return response.json().catch(function () {
+          return {};
+        }).then(function (data) {
+          return response.ok && data.ok === true;
+        });
+      })
+      .then(function (success) {
+        submitButton.disabled = false;
+        status.hidden = false;
+        if (success) {
+          status.className = 'form-status form-status--success';
+          status.textContent = 'הפנייה נשלחה בהצלחה. נחזור אליך בהקדם.';
+          form.reset();
+        } else {
+          status.className = 'form-status form-status--error';
+          status.textContent = 'אירעה שגיאה בשליחה. נסו שוב או צרו קשר בטלפון.';
+        }
+      })
+      .catch(function () {
+        submitButton.disabled = false;
+        status.hidden = false;
+        status.className = 'form-status form-status--error';
+        status.textContent = 'אירעה שגיאה בשליחה. נסו שוב או צרו קשר בטלפון.';
+      });
+  });
+})();
+</script>
 
 <footer class="site-footer">
   <div class="container">

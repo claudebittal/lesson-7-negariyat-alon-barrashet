@@ -219,6 +219,24 @@ button[type="submit"]:hover {
   background-color: var(--color-accent-dark);
 }
 
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-status {
+  margin: var(--space-md) 0 0;
+  font-weight: bold;
+}
+
+.form-status--success {
+  color: var(--color-accent-dark);
+}
+
+.form-status--error {
+  color: #b3261e;
+}
+
 /* פרטי יצירת קשר */
 
 .site-footer {
