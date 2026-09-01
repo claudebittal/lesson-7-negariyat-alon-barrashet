@@ -1,0 +1,16 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/IDE
+.vscode/
+*.swp
+*.swo
+
+# Local secrets / env
+.env
+.env.*
+
+# Local Claude Code settings (machine-specific)
+.claude/settings.local.json
