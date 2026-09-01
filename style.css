@@ -1,0 +1,261 @@
+/*
+  פלטת צבעים ניטרלית ומקצועית.
+  נבחרה בכוונה כללית ולא ספציפית לתחום מסוים, כי הזמנת העבודה
+  לא כללה מידע על תחום העיסוק של הלקוח. ירוק-אפור עמוק כצבע מבטא
+  שלווה ואמינות בלי להטות לכיוון תחום מסוים (בריאות, פיננסים,
+  יופי וכו'), ורקע שמנת חמה שקולה ורכה יותר מלבן קר.
+  יש להתאים את הפלטה מחדש ברגע שידוע תחום העיסוק.
+*/
+
+:root {
+  --color-bg: #faf9f6;
+  --color-surface: #ffffff;
+  --color-text: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-accent: #3a6b63;
+  --color-accent-dark: #2c514b;
+  --color-border: #e0ded8;
+  --color-placeholder: #c9c9c9;
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: Arial, "Segoe UI", sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--color-text);
+  line-height: 1.3;
+  margin: 0 0 var(--space-sm);
+}
+
+h1 {
+  font-size: 1.9rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+p {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section + .section {
+  border-top: 1px solid var(--color-border);
+}
+
+/* כותרת */
+
+.site-header {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.site-header h1 {
+  color: #ffffff;
+}
+
+.site-header .tagline {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* פסקת תוכן */
+
+.about h2 {
+  text-align: center;
+}
+
+.about p {
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* תמונה */
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-color: var(--color-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.image-placeholder span {
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+/* פרטים מעשיים */
+
+.details h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.details-item {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+}
+
+.details-item h3 {
+  color: var(--color-accent-dark);
+}
+
+.details-item p {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+/* טופס */
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-accent-dark);
+}
+
+/* פרטי יצירת קשר */
+
+.site-footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.site-footer h2 {
+  text-align: center;
+}
+
+.site-footer p {
+  color: var(--color-muted);
+}
+
+.site-footer a {
+  color: var(--color-accent-dark);
+}
+
+/* דסקטופ */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+    padding: 0 var(--space-lg);
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.9rem;
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-form form {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
